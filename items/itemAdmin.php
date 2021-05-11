@@ -2,7 +2,7 @@
 session_start();
 require_once '../db.inc.php';
 require '../templates/adtpl-header.php';
-require_once('../templates/title.php');
+require_once('../templates/itemTitle.php');
 
 //SQL 敘述: 取得資料表總筆數
 $sqlTotal = "SELECT COUNT(1) AS `count` FROM `items` ";
@@ -31,7 +31,13 @@ $page = $page < 1 ? 1 : $page;
 ?>
 
 
-<div class="col-12">
+<div class="col-12 mx-auto mt-3 mb-5">
+    <div class="text-center">
+        <h4 class="m-5">商品列表</h4>
+    </div>
+    <div>
+
+    </div>
     <form name="myForm" method="POST" action="itemDeleteIds.php">
         <table class="table table-striped">
             <thead>
@@ -80,7 +86,9 @@ $page = $page < 1 ? 1 : $page;
                             </td>
 
                             <td><?php echo $arr[$i]['itemId'] ?></td>
-                            <td><?php echo $arr[$i]['itemName'] ?></td>
+                            <td>
+                                <a class="h6" href="./itemDetail.php?itemId=<?php echo $arr[$i]['itemId'] ?>"><?php echo $arr[$i]['itemName'] ?></a>
+                            </td>
                             <td>
                                 <img class="img-thumbnail" style="width:200px;" src="../images/items/<?php echo $arr[$i]['itemImg']; ?>" alt=""><br>
                                 <small class="">
@@ -94,6 +102,7 @@ $page = $page < 1 ? 1 : $page;
                             <td><?php echo nl2br($arr[$i]['itemDescription']) ?></td>
                             <td>
                                 <a href="./itemEdit.php?itemId=<?php echo $arr[$i]['itemId'] ?>">編輯</a>
+                                <br>
                                 <a href="./itemDelete.php?itemId=<?php echo $arr[$i]['itemId'] ?>">刪除</a>
                             </td>
                         </tr>
@@ -141,7 +150,7 @@ $page = $page < 1 ? 1 : $page;
 
             </ul>
         </nav>
-        <input type="submit" name="smb" value="多選刪除">
+        <input class="btn btn-secondary" type="submit" name="smb" value="多選刪除">
     </form>
 </div>
 

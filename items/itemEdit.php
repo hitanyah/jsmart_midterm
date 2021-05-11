@@ -2,7 +2,7 @@
 session_start();
 require_once '../db.inc.php';
 require '../templates/adtpl-header.php';
-require_once('../templates/title.php');
+require_once('../templates/itemTitle.php');
 ?>
 
 <div class="m-5">

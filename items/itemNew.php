@@ -2,7 +2,7 @@
 session_start();
 require_once '../db.inc.php';
 require '../templates/adtpl-header.php';
-require_once('../templates/title.php');
+require_once('../templates/itemTitle.php');
 
 //先確認商品類別是否存在
 $totalCategories = $pdo->query("SELECT count(1) AS `count` FROM `categories`")->fetchAll()[0]['count'];
