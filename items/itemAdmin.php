@@ -143,9 +143,21 @@ $page = $page < 1 ? 1 : $page;
                 ?>
 
                 <li class="page-item">
-                    <a class="page-link" href="?page=<?php echo $page + 1 ?>" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
+                    <?php
+                    if ($page < $i - 1) { ?>
+                        <a class="page-link" href="?page=<?php echo $page ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+
+                    <?php
+                    } else { ?>
+
+                        <a class="page-link" href="?page=<?php echo $page + 1 ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+
+                    <?php
+                    } ?>
                 </li>
 
             </ul>
