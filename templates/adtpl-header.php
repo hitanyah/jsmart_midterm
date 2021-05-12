@@ -10,6 +10,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+    <!-- my CSS -->
+    <link href="../styles/admin.css" rel="stylesheet" type="text/css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+
     <title>JSMART</title>
     <style type="text/css">
         #contentTable {
@@ -29,15 +39,15 @@
 
 <body>
 
-    <nav>
+    <nav class="nav_header">
         <div class="d-flex shadow-sm flex-column flex-md-row align-items-center px-3 py-4">
             <h3 class="mr-md-auto pl-3">JSMART（後台）</h3>
             <div class="my-2 nav-buttons">
 
-                <a class="mr-3 text-info" href="#">活動管理</a>
-                <a class="mr-3 text-info" href="#">文章管理</a>
-                <a class="mr-3 text-info" href="./itemAdmin.php">商品管理</a>
-                <a class="mr-3 text-info" href="./index.php">商品類別管理</a>
+                <a class="mr-3 " href="#">活動管理</a>
+                <a class="mr-3 " href="#">文章管理</a>
+                <a class="mr-3 " href="./itemAdmin.php">商品管理</a>
+                <a class="mr-3 " href="./index.php">商品類別管理</a>
 
                 <!-- 我的訂單顯示判斷 -->
                 <!-- isset($_SESSION["userAccount"]) -->

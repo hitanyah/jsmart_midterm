@@ -1,7 +1,7 @@
 <?php
-session_start();
+// session_start();
 require_once '../db.inc.php';
-require '../templates/adtpl-header.php'
+require '../templates/adtpl-header.php';
 ?>
 
 

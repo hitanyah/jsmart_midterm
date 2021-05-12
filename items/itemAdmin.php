@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 require_once '../db.inc.php';
 require '../templates/adtpl-header.php';
 require_once('../templates/itemTitle.php');
@@ -178,7 +178,7 @@ $page = $page < 1 ? 1 : $page;
 
             </ul>
         </nav>
-        <input class="btn btn-secondary" type="submit" name="smb" value="多選刪除">
+        <input class="btn btn-outline-dark" type="submit" name="smb" value="多選刪除">
     </form>
 </div>
 
