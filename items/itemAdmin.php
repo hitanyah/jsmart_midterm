@@ -126,11 +126,27 @@ $page = $page < 1 ? 1 : $page;
         </table>
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="?page=<?php echo $page - 1 ?>" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
+
+                <?php
+                // 上一頁
+                if ($page <= 1) { ?>
+                    <li class="page-item">
+                        <a class="page-link" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                <?php
+                } else { ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<?php echo $page - 1 ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <?php
+                }
+                ?>
+
 
                 <?php
                 for ($i = 1; $i <= $totalPages; $i++) { ?>
@@ -144,8 +160,8 @@ $page = $page < 1 ? 1 : $page;
 
                 <li class="page-item">
                     <?php
-                    if ($page < $i - 1) { ?>
-                        <a class="page-link" href="?page=<?php echo $page ?>" aria-label="Next">
+                    if ($page > $totalPages - 1) { ?>
+                        <a class="page-link" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
 
