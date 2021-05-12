@@ -61,7 +61,7 @@ require '../templates/adtpl-header.php';
 
                         </div>
                         <div class="ml-2">
-                            <input type="submit" class="btn btn-primary" name="smb" value="加入購物車">
+                            <input type="submit" class="btn btn-outline-dark" name="smb" value="加入購物車">
                         </div>
 
                     </form>
