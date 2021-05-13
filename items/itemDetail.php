@@ -43,7 +43,7 @@ require '../templates/adtpl-header.php';
                     </ol>
                 </nav>
             </div>
-            <div class="col-8 border d-flex mt-5 mx-auto">
+            <div class="item_detail col-8 border d-flex mt-5 mx-auto">
                 <div class="col-6">
                     <img class="col" src="../images/items/<?php echo $arrItem["itemImg"]; ?>" class="itemImg" alt="...">
                 </div>

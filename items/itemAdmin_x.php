@@ -57,12 +57,16 @@ $page = $page < 1 ? 1 : $page;
             <tbody>
                 <?php
                 //SQL 敘述
-                $sql = "SELECT `items`.`itemId`,`items`.`itemName`,`items`.`itemImg`,`items`.`itemPrice`, `items`.`itemQty`, `categories`.`categoryName`, `categories`.`categoryParentId` , `items`.`itemDescription`
-                    FROM `items`
-                    INNER JOIN `categories`
-                    ON `items`.`itemCategoryId` = `categories`. `categoryId`
-                    ORDER BY `itemId` ASC
-                            LIMIT ? , ?";
+                $sql = "SELECT `items`.`itemId`,`items`.`itemName`,`items`.`itemImg`,`items`.`itemPrice`, `items`.`itemQty`,  `category_p`.`categoryName` AS `categoryParentName`,
+                `category_c`.`categoryName` AS  `categoryChildName`,
+               `items`.`itemDescription`
+                        FROM `categories` AS `category_p`
+                        INNER JOIN `items`
+                        ON `items`.`itemCategoryId` =`category_p`. `categoryId`
+                        LEFT JOIN `categories` AS `category_c`
+                        ON `category_c`.`categoryParentId`= `category_p`.`categoryId`
+                        ORDER BY `itemId` ASC
+                        LIMIT ? , ?";
 
 
                 //設定繫結值
@@ -99,10 +103,9 @@ $page = $page < 1 ? 1 : $page;
                             <td><?php echo $arr[$i]['itemPrice'] ?></td>
                             <td><?php echo $arr[$i]['itemQty'] ?></td>
                             <td>
-                                <?php echo $arr[$i]['categoryName'] ?>
+                                <?php echo $arr[$i]['categoryParentName'] ?>
                                 <br>
-                                <?php //echo $arr[$i]['categoryParentId'] 
-                                ?>
+                                <?php echo $arr[$i]['categoryChildName'] ?>
                             </td>
                             <td><?php echo nl2br($arr[$i]['itemDescription']) ?></td>
                             <td>

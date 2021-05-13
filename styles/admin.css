@@ -48,6 +48,10 @@ h5 {
   background-color: #3c3c5015;
 }
 
+.item_detail {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 /* input upload button text */
 .custom-file-input:lang(en) ~ .custom-file-label::after {
   content: "UPLOAD";
