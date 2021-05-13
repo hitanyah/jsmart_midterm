@@ -61,7 +61,7 @@
 
                 <!-- 顯示註冊或會員您好 -->
                 <?php if (isset($_SESSION["adminAccount"])) { ?>
-                    <a class="mr-3 text-info" href="#">會員管理</a>
+                    <a class="mr-3" href="#">會員管理</a>
                     <span class="mr-3"><?php echo $_SESSION["adminAccount"] ?> 您好</span>
                 <?php } ?>
 
