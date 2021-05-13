@@ -1,3 +1,7 @@
+<?php
+//require_once '../admin_index/adminCheckSession.php';
+?>
+
 <!-- 注意填寫路徑時，要以require 的index.php檔案為主 -->
 <!doctype html>
 <html lang="en">
@@ -41,27 +45,30 @@
 
     <nav class="nav_header">
         <div class="d-flex shadow-sm flex-column flex-md-row align-items-center px-3 py-4">
-            <h3 class="mr-md-auto pl-3">JSMART（後台）</h3>
+            <h3 class="mr-md-auto pl-3">
+                <a class="text-dark" href="../admin_index/admin.php">JSMART（後台）</a>
+            </h3>
             <div class="my-2 nav-buttons">
 
-                <a class="mr-3 " href="#">活動管理</a>
-                <a class="mr-3 " href="#">文章管理</a>
-                <a class="mr-3 " href="./itemAdmin.php">商品管理</a>
-                <a class="mr-3 " href="./index.php">商品類別管理</a>
+                <a class="mr-3" href="../event/index.php">活動管理</a>
+                <a class="mr-3" href="../article/index.php">文章管理</a>
+                <a class="mr-3" href="../items/itemAdmin.php">商品管理</a>
+                <a class="mr-3" href="../category/category.php">類別管理</a>
+
 
                 <!-- 我的訂單顯示判斷 -->
                 <!-- isset($_SESSION["userAccount"]) -->
 
                 <!-- 顯示註冊或會員您好 -->
                 <?php if (isset($_SESSION["adminAccount"])) { ?>
-                    <a class="mr-3 text-info" href="#">管理中心</a>
+                    <a class="mr-3 text-info" href="#">會員管理</a>
                     <span class="mr-3"><?php echo $_SESSION["adminAccount"] ?> 您好</span>
                 <?php } ?>
 
                 <?php if (!isset($_SESSION["adminAccount"])) { ?>
-                    <a class="mr-3 btn btn-outline-dark" href="./login.php">登入</a>
+                    <a class="mr-3 btn btn-outline-dark" href="../login.php">登入</a>
                 <?php } else { ?>
-                    <a class="mr-3 btn btn-outline-dark" href="./logout.php">登出</a>
+                    <a class="mr-3 btn btn-outline-dark" href="../logout.php">登出</a>
                 <?php } ?>
             </div>
         </div>
